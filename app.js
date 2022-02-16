@@ -5,10 +5,27 @@ function inputValue(inputId){
 }
 
 document.getElementById('calculate').addEventListener('click', function(){
- const incomeAmount = inputValue('income-amount')
+    
+ const incomeAmount = inputValue('income-amount');
+ const foodExpense = inputValue('food-amount');
+ const rentExpense = inputValue('rent-amount');
+ const clothExpense = inputValue('cloth-amount')
+ const totalExpenseText = document.getElementById('total-expense');
+ const totalExpenseAmount = parseFloat(totalExpenseText);
+ const newTotalExpenseAmont = foodExpense+ rentExpense +clothExpense;
+ totalExpenseText.innerText = newTotalExpenseAmont;
+
+ const remainingBalanceText = document.getElementById('remaining-balance');
+ const remainingBalanceAmount = parseFloat(remainingBalanceText);
+ const RemainingBalance = incomeAmount - newTotalExpenseAmont;
  
- const totalExpense = document.getElementById('total-expense');
- totalExpense.innerText = incomeAmount;
+ remainingBalanceText.innerText = RemainingBalance;
+
+ 
+ 
+ 
+ 
+
 
 
 })
