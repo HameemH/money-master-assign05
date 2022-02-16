@@ -21,11 +21,5 @@ document.getElementById('calculate').addEventListener('click', function(){
  
  remainingBalanceText.innerText = RemainingBalance;
 
- 
- 
- 
- 
-
-
 
 })
