@@ -12,8 +12,9 @@ document.getElementById('calculate').addEventListener('click', function(){
  const rentExpense = inputValue('rent-amount');
  const clothExpense = inputValue('cloth-amount')
 
-    // nested function and  basic calculations 
- if(incomeAmount > 0  || foodExpense > 0 || rentExpense > 0 || clothExpense > 0){
+    // nested function and  basic calculations
+  
+ if(incomeAmount >= 0  && foodExpense >= 0 && rentExpense >= 0 && clothExpense >= 0){
     const totalExpenseText = document.getElementById('total-expense');
     const totalExpenseAmount = parseFloat(totalExpenseText);
     const newTotalExpenseAmont = foodExpense+ rentExpense +clothExpense;
@@ -25,13 +26,14 @@ document.getElementById('calculate').addEventListener('click', function(){
        const RemainingBalance = incomeAmount - newTotalExpenseAmont;
         remainingBalanceText.innerText = RemainingBalance;
     }
+
     else{
         alert('You are spending too much')
     }
  }
-else if(incomeAmount < 0  || foodExpense < 0 || rentExpense < 0 || clothExpense < 0){
-    alert('please put a positive number');  
-}
+  else if(incomeAmount <= 0  && foodExpense <= 0 && rentExpense <= 0 && clothExpense <= 0){
+        alert('please put a valid number');  
+    } 
  else{
      alert('please input a valid number')
  }
