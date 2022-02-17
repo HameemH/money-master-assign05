@@ -40,24 +40,29 @@ else if(incomeAmount < 0  || foodExpense < 0 || rentExpense < 0 || clothExpense 
 
 // handle saving calculation 
 document.getElementById('savings').addEventListener('click', function(){
+    //  declaring previous values 
     const incomeAmount = inputValue('income-amount');
-    const savingPercentage = inputValue('saving-percent');
     const remainingBalanceText = document.getElementById('remaining-balance').innerText;
     const remainingBalanceAmount = parseFloat(remainingBalanceText);
+    // new values and  calculation
     const savingAmountText = document.getElementById('saving-amount');
-    const savingInitial = savingPercentage / 100;
-    const savingAmount = incomeAmount * savingInitial;
+    const savingPercentage = inputValue('saving-percent');
+    const savingPercentageInitial = savingPercentage / 100;
+    const savingAmount = incomeAmount * savingPercentageInitial;
 
-    //  bonus part alert messege 
-    if(savingAmount < remainingBalanceAmount){
+        //bonus part alert messege 
+    if(savingAmount < remainingBalanceAmount && incomeAmount>0){
         savingAmountText.innerText = savingAmount;
      const remainingBalAfterSaving = document.getElementById('amount-after-saving');
      const remainingBalAfterSavingAmount = remainingBalanceAmount - savingAmount;
      remainingBalAfterSaving.innerText = remainingBalAfterSavingAmount;
 
     }
-    else{
+    else if(incomeAmount>0){
         alert('you dont have enough money to save')
+    }
+    else{
+        alert('please input a valid number')
     }
     
 
