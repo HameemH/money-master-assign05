@@ -1,5 +1,6 @@
 function inputValue(inputId){
     const amountText = document.getElementById(inputId).value;
+    
     const amount = parseFloat(amountText);
     
     
@@ -13,7 +14,7 @@ document.getElementById('calculate').addEventListener('click', function(){
  const foodExpense = inputValue('food-amount');
  const rentExpense = inputValue('rent-amount');
  const clothExpense = inputValue('cloth-amount')
- if(incomeAmount < 0 || foodExpense < 0 || rentExpense < 0 || clothExpense < 0){
+ if(incomeAmount < 0  || foodExpense < 0 || rentExpense < 0 || clothExpense < 0){
      alert('please put a positive number');
     
  }
