@@ -53,7 +53,7 @@ document.getElementById('savings').addEventListener('click', function(){
     const savingAmount = incomeAmount * savingPercentageInitial;
 
         //bonus part alert messege 
-    if(savingAmount < remainingBalanceAmount && incomeAmount>0){
+    if(savingAmount <= remainingBalanceAmount && incomeAmount>0){
         savingAmountText.innerText = savingAmount;
      const remainingBalAfterSaving = document.getElementById('amount-after-saving');
      const remainingBalAfterSavingAmount = remainingBalanceAmount - savingAmount;
